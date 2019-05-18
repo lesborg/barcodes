@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 612 792" width="612pt" height="792pt">
+    {%- for barcode in barcodes %}
+    <g transform="translate({{ barcode.x }} {{ barcode.y }})">
+        <text style="font-family: 'Liberation Sans'; font-size: 4.5pt; text-align: center; text-anchor: middle;"
+            x="63" y="7.128">EX LIBRIS L.E.S.B.</text>
+        <text style="font-family: 'Liberation Sans'; font-size: 4.5pt; text-align: center; text-anchor: middle;"
+            x="63" y="33">{{ barcode.s }}</text>
+        <g transform="translate(7 10.5)">
+        {%- for line in barcode.lines %}
+            <rect x="{{ line }}" y="0" width="1" height="15"/>
+        {%- endfor %}
+        </g>
+    </g>
+    {%- endfor %}
+</svg>

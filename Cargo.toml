@@ -1,0 +1,17 @@
+[package]
+name = "generate-barcodes"
+version = "0.1.0"
+authors = ["iliana destroyer of worlds <iliana@buttslol.net>"]
+edition = "2018"
+publish = false
+license = "WTFPL"
+
+[profile.release]
+lto = true
+codegen-units = 1
+panic = 'abort'
+
+[dependencies]
+askama = "0.8.0"
+barcoders = "0.10.0"
+primal = "0.2.3"
